@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1>Offline Label Station</h1>
+
+    <form action="/print" method="POST">
+        <select name="mode">
+            <option value="qr">QR Code</option>
+            <option value="barcode">Barcode</option>
+            <option value="text">Text Label</option>
+        </select>
+
+        <input name="data" placeholder="Enter text" />
+
+        <button type="submit">Print</button>
+    </form>
+
+    <a href="/inventory">Inventory Label</a>
+</body>
+</html>
