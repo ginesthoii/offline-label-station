@@ -34,8 +34,48 @@ Everything runs completely offline.
 ---
 
 ## Folder Structure
-
-See root of this repo.
+```
+offline-label-station/
+│
+├── README.md
+├── LICENSE
+│
+├── esp32/
+│   ├── main.py
+│   ├── menu.py
+│   ├── printer.py
+│   ├── barcode.py
+│   ├── qr.py
+│   └── templates.py
+│
+├── pi-zero/
+│   ├── kiosk.py
+│   ├── printer.py
+│   ├── qrgen.py
+│   ├── barcodes.py
+│   ├── nfc_reader.py
+│   ├── datastore.py
+│   ├── web/
+│   │   ├── app.py
+│   │   ├── templates/
+│   │   │   ├── index.html
+│   │   │   ├── print_label.html
+│   │   │   └── inventory.html
+│   │   └── static/
+│   │       ├── style.css
+│   │       └── client.js
+│   └── autostart.service
+│
+├── data/
+│   ├── inventory.json
+│   ├── animals.json
+│   └── bins.json
+│
+└── templates/
+    ├── inventory_template.png.b64
+    ├── livestock_template.png.b64
+    └── bin_template.png.b64
+```
 
 ---
 
@@ -51,10 +91,10 @@ See root of this repo.
 ---
 
 ## Quick Start — Pi Zero
+```
 sudo apt update
 sudo apt install python3-pip python3-flask python3-pil libnfc-bin
 pip3 install pyserial qrcode adafruit-circuitpython-thermal-printer
-```
 Run kiosk:
 python3 pi-zero/kiosk.py
 Enable autostart:
@@ -64,8 +104,9 @@ sudo systemctl start autostart
 ```
 
 ## Quick Start — ESP32 (MicroPython)
-
+```
 Copy esp32/ folder to device:
 ampy put main.py
 ampy put *.py
 Reboot ESP32 → menu appears.
+```
