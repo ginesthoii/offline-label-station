@@ -1,0 +1,13 @@
+[
+  {
+    "tag": "G-004",
+    "name": "Daisy",
+    "species": "Goat",
+    "sex": "F",
+    "birth": "2024-03-12",
+    "health": {
+      "last_exam": "2025-01-10",
+      "notes": "Healthy, vaccinated"
+    }
+  }
+]
